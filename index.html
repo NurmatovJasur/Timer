@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.new__year{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+video{
+    flex-grow: 1;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+h1{
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-size: 80px;
+}
+.timer{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+.day{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.day span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+}
+.hours{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hours span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+}
+.minute{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.minute span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+}
+.second{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.second span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+}
+.text{
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-size: 70px;
+
+}
+
+</style>
+<body>
+    <div class="new__year">
+        <video src="image/99622-655564987.mp4" loop autoplay muted></video>
+        <h1>До нового года осталось: </h1>
+        <div class="timer">
+            <div class="day">
+                <span class="day-num">00</span>
+                <p class="text">Дней</p>
+            </div>
+            <div class="hours">
+                <span class="hours-num">00</span>
+                <p class="text">Часов</p>
+            </div>
+            <div class="minute">
+                <span class="minute-num">00</span>
+                <p class="text">Минут</p>
+            </div>
+            <div class="second">
+                <span class="second-num">00</span>
+                <p class="text">Секунд</p>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
