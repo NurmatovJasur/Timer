@@ -9,22 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <style>
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
-.new__year{
+
+.new__year {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+    padding: 20px;
 }
-video{
+
+video {
     flex-grow: 1;
     object-fit: cover;
     z-index: -1;
@@ -34,65 +38,97 @@ video{
     width: 100%;
     height: 100%;
 }
-h1{
+
+h1 {
     font-family: "Caveat", serif;
     font-optical-sizing: auto;
-    font-size: 80px;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.timer{
+
+.timer {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-top: 30px;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.day{
-    display:flex;
+
+.day, .hours, .minute, .second {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 120px;
 }
-.day span{
+
+.day span, .hours span, .minute span, .second span {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
+    font-size: clamp(2.5rem, 5vw, 6.25rem);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.hours{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-.hours span{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
-}
-.minute{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-.minute span{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
-}
-.second{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-.second span{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
-}
-.text{
+
+.text {
     font-family: "Caveat", serif;
     font-optical-sizing: auto;
-    font-size: 70px;
-
+    font-size: clamp(1.5rem, 3vw, 4.375rem);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .timer {
+        gap: 1rem;
+    }
+    
+    .day, .hours, .minute, .second {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timer {
+        gap: 0.5rem;
+    }
+    
+    .day, .hours, .minute, .second {
+        min-width: 80px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .new__year {
+        padding: 10px;
+    }
+    
+    .timer {
+        margin-top: 0.5rem;
+    }
+    
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+}
 </style>
 <body>
     <div class="new__year">
         <video src="image/99622-655564987.mp4" loop autoplay muted></video>
-        <h1>До нового года осталось: </h1>
+        <h1>До нового года осталось:</h1>
         <div class="timer">
             <div class="day">
                 <span class="day-num">00</span>
